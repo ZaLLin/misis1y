@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int t, l, s; 
+    cin >> t;
+    vector <int> otv(t);
+    for (int i = 0; i < t; i++) {
+        for (int j = 0; j < 4; j++) {
+            cin >> l;
+            s = s + l;
+        }
+        if (s == 0) {
+            otv[i] = 0;
+        }
+        else if (1 <= s <= 3) {
+            otv[i] = 1;
+        }
+        else {
+            otv[i] = 2;
+        }
+    }
+    for (int d = 0; d < t; d++) {
+        cout << otv[d] << endl;
+    }
+    return 0;
+}
