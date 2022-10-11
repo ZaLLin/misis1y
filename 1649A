@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int t, k, s, m;
+    s = 0;
+    k = 1;
+    cin >> t;
+    vector <int> otv(t);
+    for (int j = 0; j < t; j++) {
+        cin >> m;
+        vector <int> n(m);
+        for (int i = 0; i < m; i++) {
+            cin >> n[i];
+        }
+        for (int g = 0; g < m; g++) {
+            if (n[g + 1] == 0) {
+                k = k + 1;
+            }
+            if (n[g+1] == 1) {
+                s = s + k;
+                k = 1;
+        }
+        otv[j] = s;
+        s = 0;
+        }
+    }
+    for (int d = 0; d < t; d++) {
+        cout << otv[d] << endl;
+    }
+    return 0;
+}
